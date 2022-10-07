@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div id="div1" style="padding:100px" class="m-1">4</div>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="row">
+    <div class="col-3"> @await Component.InvokeAsync("ClassA") </div>
+    <div class="col-3"></div>
+    <div class="col-3"></div>
+</div>
+
+<component></component>
+<script>
+    const div1 = document.getElementById("div1")
+    console.log(div1.innerHTML)
+    const paddingLeft = window.getComputedStyle(div1, null).getPropertyValue('padding-left')
+    /*let a = div.getComputedStyle(div, null).getPropertyValue('padding-left')*/
+    let a = div1.getAttribute("style")
+
+    if (a > 50) {
+        console.log("true")
+    }
+
+    console.log(paddingLeft);
+</script>
